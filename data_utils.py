@@ -90,7 +90,7 @@ def denormalize(D, means, stds=None):
     
     n_rows =  D.shape[0]    
     
-    if stds != None:
+    if stds is not None:
         result = np.multiply(  D, stds  ) + np.tile( means, (n_rows,1) )
     else:
         result = D + np.tile( means, (n_rows,1) )

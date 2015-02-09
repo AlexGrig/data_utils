@@ -2,11 +2,10 @@
 """
 Author: Alexander Grigorevskiy. Aalto University, 2013.
 
-
 """
 
 import numpy as np
-import data_utils as du
+from . import data_utils as du
 
 class Inverse_Update(object):
     """    
@@ -60,7 +59,7 @@ class Inverse_Update(object):
             self.prev_size = self.prev_inv.shape[0] # prev_inv is a square matrix
 
                 
-        if self.prev_inv == None: # first iteration
+        if self.prev_inv is None: # first iteration
             
             self.prev_inv = 1./ ( new_col.T * new_col + new_lambda)
             self.prev_size = 1
